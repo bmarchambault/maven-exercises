@@ -1,24 +1,15 @@
-package util;
 import java.util.Scanner;
-import java.util.jar.JarOutputStream;
-//    Create a class named Input that has a private property named scanner.
+
+
 public class Input {
-    private  Scanner scanner;//private property of scanner
-    //   When an instance of this object (Input object) is created,
-    // the scanner property should be set to a new instance of the Scanner class.
+    private  Scanner scanner;
     public Input(){//constructor for input
-        this.scanner = new Scanner(System.in);//creates a new instance of the scanner property
+        this.scanner = new Scanner(System.in);
     }
 
 
-//    The class should have the following methods, all of which return command line input from the user:
     public String getString(){
-//        -----------------------------------------
-//        String userName = this.scanner.next();
-// can assign the value to a variable, but for a more broad use case for getting a users string:
-//  ---------------------------------------
-//        System.out.println(scanner.nextLine());//testing.
-        return scanner.nextLine();//next line vs next because this allows the user to type in more than just a word.  again, for a broader use case of getting a string.
+        return scanner.nextLine();
     }
 
     public String getString(String prompt) {
@@ -32,10 +23,10 @@ public class Input {
     }
 
     public boolean yesNo(){
-        String input = scanner.next();//only needs to be next because the user will only enter a word or character.
-        System.out.println(input);//want to see what they entered.
+        String input = scanner.next();
+        System.out.println(input);
              if(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")){
-//            System.out.println("yesNo worked with yes");//sout anything here, so you can follow your code in case of error
+//            System.out.println("yesNo worked with yes");
             return true;
         }else{
 //            System.out.println("yesNo worked with no");//sout in case of error.
@@ -116,15 +107,6 @@ public class Input {
 //===========================================================================
 
     public int getInt(int min, int max) {
-//        ------my solution - worked-------------------
-//        int userInputRangeInt;
-//        do {
-//            System.out.println("Please enter an number between " + min + " and " + max);
-//            userInputRangeInt = this.scanner.nextInt();
-//        } while ( userInputRangeInt < min || userInputRangeInt > max);
-//            System.out.println("Perfect!");
-//            return userInputRangeInt;
-//        ----------------------------------
         int userInt = getInt();
         if (userInt >= min && userInt <= max){
             return userInt;
@@ -155,14 +137,6 @@ public class Input {
 
 
     public double getDouble(double min, double max){
-//        double userInputRangeDbl;
-//        do {
-//            System.out.println("Please enter an decimal number between " + min + " and " + max);
-//            userInputRangeDbl = this.scanner.nextDouble();
-//        } while ( userInputRangeDbl < min || userInputRangeDbl > max);
-//        System.out.println("Perfect!");
-//        return userInputRangeDbl;
-//        -----------------------------------------------
         double userDouble = getDouble();
         if (userDouble >= min && userDouble <= max){
             return userDouble;
